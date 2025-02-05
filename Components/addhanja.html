@@ -1,0 +1,73 @@
+<div
+  id="hanja-modal"
+  class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm"
+>
+  <div class="bg-white p-8 rounded-2xl shadow-2xl w-[480px] transform transition-all">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 pb-4">
+      새로운 한자 추가
+    </h2>
+
+    <div class="space-y-4">
+      <div>
+        <label class="block text-lg font-semibold text-gray-700 mb-1">한자</label>
+        <input
+          type="text"
+          id="hanja-input"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B4513] focus:border-[#8B4513] outline-none transition-all"
+          placeholder="한자를 입력하세요"
+          maxlength="1"
+          required
+        />
+      </div>
+
+      <div>
+        <label class="block text-lg font-semibold text-gray-700 mb-1">훈음</label>
+        <input
+          type="text"
+          id="meaning-input"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B4513] focus:border-[#8B4513] outline-none transition-all"
+          placeholder="훈음을 입력하세요"
+          required
+        />
+      </div>
+
+      <div>
+        <label class="block text-lg font-semibold text-gray-700 mb-1">획수</label>
+        <input
+          type="number"
+          id="stroke-input"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B4513] focus:border-[#8B4513] outline-none transition-all"
+          placeholder="획수를 입력하세요"
+          required
+          disabled
+        />
+      </div>
+
+      <div>
+        <label class="block text-lg font-semibold text-gray-700 mb-1">설명</label>
+        <textarea
+          id="description-input"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B4513] focus:border-[#8B4513] outline-none transition-all resize-none"
+          placeholder="설명을 입력하세요"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="flex justify-end space-x-3 mt-4 pt-4">
+      <button
+        id="close-modal"
+        class="px-6 py-2.5 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-all"
+      >
+        취소
+      </button>
+      <button
+        id="save-hanja"
+        class="px-6 py-2.5 rounded-lg bg-[#8B4513] text-white hover:bg-[#7B3503] transition-all"
+      >
+        추가
+      </button>
+    </div>
+  </div>
+</div>

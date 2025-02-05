@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Hanja - 나만의 단어장</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script type="module" src="./js/wordlist.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div id="navbar-container"></div>
+    <div class="container mx-auto px-4 py-8">
+      <div class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <h1 class="text-4xl font-bold text-gray-800">나만의 한자 단어장</h1>
+          <p class="text-gray-600">
+            전체 단어 수: <span class="font-semibold" id="word-count">0</span>개
+          </p>
+        </div>
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+          <div class="bg-white rounded-lg shadow-sm p-3 min-w-[200px]">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-gray-600">단어장 사용량</span>
+              <span class="text-sm font-medium" id="wordlist-usage-text">0/0</span>
+            </div>
+
+
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-[#8B4513] h-2.5 rounded-full" id="wordlist-usage-bar" style="width: 0%"></div>
+            </div>
+          </div>
+          <button
+            id="add-word"
+            class="bg-[#8B4513] text-white px-4 py-2 rounded-lg hover:bg-[#7B3503] transition whitespace-nowrap"
+          >
+            <i class="fas fa-plus"></i> 한자 추가
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="flex items-center">
+            <select id="filter-type" class="w-full p-2 border rounded-md">
+              <option value="hanja">한자</option>
+              <option value="meaning">훈음</option>
+              <option value="stroke">획수</option>
+              <option value="description">설명</option>
+            </select>
+          </div>
+          <div class="flex items-center md:col-span-2">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="검색어를 입력하세요"
+              class="w-full p-2 border rounded-md"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="word-list"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      ></div>
+
+      <div class="mt-8 flex justify-center">
+        <button
+          id="load-more"
+          class="bg-[#8B4513] text-white px-6 py-3 rounded-lg hover:bg-[#7B3503] transition hidden"
+        >
+          더 보기
+        </button>
+      </div>
+
+      <div id="modal-container"></div>
+    </div>
+  </body>
+</html>
