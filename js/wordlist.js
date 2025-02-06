@@ -77,8 +77,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function loadModal() {
   const [addHanjaResponse, learnHanjaResponse] = await Promise.all([
-    fetch("./components/addhanja.html"),
-    fetch("./components/learnhanja.html"),
+    fetch("components/addhanja.html"),
+    fetch("components/learnhanja.html"),
   ]);
 
   const [addHanjaHtml, learnHanjaHtml] = await Promise.all([

@@ -10,6 +10,11 @@ export async function initLearnHanja() {
   const animateButton = document.getElementById("animate-button");
   const quizButton = document.getElementById("quiz-button");
 
+  if (!modal || !closeButton || !animateButton || !quizButton) {
+    alert("필요한 요소를 찾을 수 없습니다.");
+    return;
+  }
+
   let isQuizMode = false;
 
   closeButton.addEventListener("click", () => {
