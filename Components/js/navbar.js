@@ -1,13 +1,13 @@
-import { auth } from "../firebase/firebase-init.js";
+import { auth } from "../../js/firebase/firebase-init.js";
 import {
   onAuthStateChanged,
   signOut,
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-import { deleteAccount } from "../firebase/firebase-auth.js";
+import { deleteAccount } from "../../js/firebase/firebase-auth.js";
 
 export async function loadNavbar() {
   try {
-    const response = await fetch('Components/navbar.html');
+    const response = await fetch('../components/navbar.html');
     const html = await response.text();
     document.getElementById('navbar-container').innerHTML = html;
     

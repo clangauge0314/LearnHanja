@@ -1,4 +1,4 @@
-import { auth, db } from "../firebase/firebase-init.js";
+import { auth, db } from "../../js/firebase/firebase-init.js";
 import { deleteDoc, doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
 let writer = null;

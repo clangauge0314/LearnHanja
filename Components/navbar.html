@@ -1,75 +1,150 @@
 <nav class="bg-[#8B4513] p-3 shadow-md">
-    <div class="container mx-auto flex justify-between items-center max-w-7xl">
-      <a href="#" class="text-white text-xl md:text-2xl lg:text-3xl font-bold ml-4 lg:ml-0" onclick="window.location.href='/'">
-        Learn Hanja
+  <div class="container mx-auto flex justify-between items-center max-w-7xl">
+    <a
+      href="#"
+      class="text-white text-xl md:text-2xl lg:text-3xl font-bold ml-4 lg:ml-0"
+      onclick="window.location.href='/'"
+    >
+      Learn Hanja
+    </a>
+
+    <button
+      id="menu-toggle"
+      class="text-white text-2xl lg:hidden focus:outline-none absolute right-8"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul id="nav-menu" class="hidden lg:flex space-x-10 items-center mx-auto">
+      <li>
+        <a href="/" class="text-xl text-white hover:text-yellow-400">홈</a>
+      </li>
+      <li>
+        <a
+          href="/pages/my-word-list.html"
+          class="text-xl text-white hover:text-yellow-400"
+          >나만의 단어장</a
+        >
+      </li>
+      <li>
+        <a
+          href="/pages/ai-hanja-suggest.html"
+          class="text-xl text-white hover:text-yellow-400"
+          >한자 AI</a
+        >
+      </li>
+
+      <li>
+        <a
+          href="/pages/inquiry.html"
+          class="text-xl text-white hover:text-yellow-400"
+          >문의하기</a
+        >
+      </li>
+    </ul>
+
+    <div class="hidden lg:flex space-x-4 mr-10">
+      <a
+        href="login.html"
+        id="login-button"
+        class="border-2 border-white bg-[#8B4513] text-white font-semibold py-2 px-6 rounded-lg hover:bg-white hover:text-[#8B4513] transition duration-300"
+      >
+        로그인
       </a>
-  
-      <button id="menu-toggle" class="text-white text-2xl lg:hidden focus:outline-none absolute right-8">
-        <i class="fas fa-bars"></i>
+      <a
+        href="signup.html"
+        id="signup-button"
+        class="border-2 border-white bg-[#8B4513] text-white font-semibold py-2 px-6 rounded-lg hover:bg-white hover:text-[#8B4513] transition duration-300"
+      >
+        회원가입
+      </a>
+    </div>
+
+    <div
+      id="user-profile"
+      class="hidden relative flex items-center space-x-4 text-white mr-16"
+    >
+      <div id="avatar-container" class="cursor-pointer hidden lg:block">
+        <div
+          id="avatar"
+          class="w-10 h-10 rounded-full overflow-hidden border-2 border-white"
+        ></div>
+      </div>
+
+      <div
+        id="profile-dropdown"
+        class="hidden absolute top-12 right-0 bg-white shadow-lg rounded-lg py-2 w-48 text-gray-900"
+      >
+        <div class="px-4 py-2 font-semibold border-b border-gray-200">
+          <span id="user-name"></span>
+        </div>
+        <button
+          id="delete-account-button"
+          class="block w-full text-left px-4 py-2 hover:bg-red-100 text-red-600"
+        >
+          회원탈퇴
+        </button>
+        <button
+          id="logout-button"
+          class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+        >
+          로그아웃
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden flex flex-col items-center space-y-4 bg-[#8B4513] text-white p-3 lg:hidden"
+  >
+    <a href="/" class="text-lg hover:text-yellow-400">홈</a>
+    <a href="/pages/my-word-list.html" class="text-lg hover:text-yellow-400"
+      >나만의 단어장</a
+    >
+
+    <a href="/pages/ai-hanja-suggest.html" class="text-lg hover:text-yellow-400"
+      >한자 AI</a
+    >
+
+    <a href="/pages/inquiry.html" class="text-lg hover:text-yellow-400"
+      >문의하기</a
+    >
+
+    <div id="mobile-login-buttons" class="flex space-x-4">
+      <a
+        href="login.html"
+        class="border-2 border-white bg-[#8B4513] text-white font-semibold py-2 px-6 rounded-lg hover:bg-white hover:text-[#8B4513] transition duration-300"
+      >
+        로그인
+      </a>
+      <a
+        href="signup.html"
+        class="border-2 border-white bg-[#8B4513] text-white font-semibold py-2 px-6 rounded-lg hover:bg-white hover:text-[#8B4513] transition duration-300"
+      >
+        회원가입
+      </a>
+    </div>
+
+    <div
+      id="mobile-user-profile"
+      class="hidden flex flex-col items-center space-y-2 w-full"
+    >
+      <div class="text-lg font-semibold">
+        <span id="mobile-user-name"></span>
+      </div>
+      <button
+        id="mobile-delete-account-button"
+        class="block w-full text-center py-2 hover:bg-red-700 text-red-100"
+      >
+        회원탈퇴
       </button>
-  
-
-      <ul id="nav-menu" class="hidden lg:flex space-x-10 items-center mx-auto">
-        <li><a href="/" class="text-xl text-white hover:text-yellow-400">홈</a></li>
-        <li><a href="wordlist.html" class="text-xl text-white hover:text-yellow-400">나만의 단어장</a></li>
-        <li><a href="hanja-ai.html" class="text-xl text-white hover:text-yellow-400">한자 AI</a></li>
-
-
-        <li><a href="inquiry.html" class="text-xl text-white hover:text-yellow-400">문의하기</a></li>
-      </ul>
-  
-      <div class="hidden lg:flex space-x-4 mr-10">
-        <a href="login.html" id="login-button"
-          class="border-2 border-white bg-[#8B4513] text-white font-semibold py-2 px-6 rounded-lg hover:bg-white hover:text-[#8B4513] transition duration-300">
-          로그인
-        </a>
-        <a href="signup.html" id="signup-button"
-          class="border-2 border-white bg-[#8B4513] text-white font-semibold py-2 px-6 rounded-lg hover:bg-white hover:text-[#8B4513] transition duration-300">
-          회원가입
-        </a>
-      </div>
-  
-      <div id="user-profile" class="hidden relative flex items-center space-x-4 text-white mr-16">
-        <div id="avatar-container" class="cursor-pointer hidden lg:block">
-          <div id="avatar" class="w-10 h-10 rounded-full overflow-hidden border-2 border-white"></div>
-        </div>
-  
-        <div id="profile-dropdown" class="hidden absolute top-12 right-0 bg-white shadow-lg rounded-lg py-2 w-48 text-gray-900">
-          <div class="px-4 py-2 font-semibold border-b border-gray-200">
-            <span id="user-name"></span>
-          </div>
-          <button id="delete-account-button" class="block w-full text-left px-4 py-2 hover:bg-red-100 text-red-600">회원탈퇴</button>
-          <button id="logout-button" class="block w-full text-left px-4 py-2 hover:bg-gray-100">로그아웃</button>
-        </div>
-      </div>
+      <button
+        id="mobile-logout-button"
+        class="block w-full text-center py-2 hover:bg-[#7B3503]"
+      >
+        로그아웃
+      </button>
     </div>
-  
-    <div id="mobile-menu" class="hidden flex flex-col items-center space-y-4 bg-[#8B4513] text-white p-3 lg:hidden">
-      <a href="/" class="text-lg hover:text-yellow-400">홈</a>
-      <a href="wordlist.html" class="text-lg hover:text-yellow-400">나만의 단어장</a>
-      <a href="hanja-ai.html" class="text-lg hover:text-yellow-400">한자 AI</a>
-
-      <a href="inquiry.html" class="text-lg hover:text-yellow-400">문의하기</a>
-  
-
-      <div id="mobile-login-buttons" class="flex space-x-4">
-        <a href="login.html"
-          class="border-2 border-white bg-[#8B4513] text-white font-semibold py-2 px-6 rounded-lg hover:bg-white hover:text-[#8B4513] transition duration-300">
-          로그인
-        </a>
-        <a href="signup.html"
-          class="border-2 border-white bg-[#8B4513] text-white font-semibold py-2 px-6 rounded-lg hover:bg-white hover:text-[#8B4513] transition duration-300">
-          회원가입
-        </a>
-      </div>
-  
-      <div id="mobile-user-profile" class="hidden flex flex-col items-center space-y-2 w-full">
-        <div class="text-lg font-semibold">
-          <span id="mobile-user-name"></span>
-        </div>
-        <button id="mobile-delete-account-button" class="block w-full text-center py-2 hover:bg-red-700 text-red-100">회원탈퇴</button>
-        <button id="mobile-logout-button" class="block w-full text-center py-2 hover:bg-[#7B3503]">로그아웃</button>
-      </div>
-    </div>
-  </nav>
-  
+  </div>
+</nav>
