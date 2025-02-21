@@ -1,7 +1,7 @@
 import { doc, updateDoc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 import { fetchAndDisplayWords } from "./word-list-utils.js";
 
-const GEMINI_API_KEY = "AIzaSyA20jVcBHKAijE3K_YLystYe89uLnOS-U0";
+const GEMINI_API_KEY = "";
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent";
 
 export async function handleAIRecommendation(currentUser, db) {
